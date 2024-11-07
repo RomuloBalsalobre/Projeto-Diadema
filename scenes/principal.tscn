@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://drvpohojbebbj"]
+
+[ext_resource type="PackedScene" uid="uid://dssy8cmc1mw46" path="res://scenes/cena_1___teatro.tscn" id="2_fnd44"]
+[ext_resource type="PackedScene" uid="uid://dad2q0jh35ahe" path="res://scenes/cena_2___recepção.tscn" id="3_uonq7"]
+[ext_resource type="PackedScene" uid="uid://ycihfkjwhyji" path="res://scenes/cena_3___mugshot.tscn" id="4_snx2s"]
+[ext_resource type="PackedScene" uid="uid://ddwa00qy21xah" path="res://scenes/cena_5___final_marcio.tscn" id="5_v600f"]
+[ext_resource type="PackedScene" uid="uid://hkhqedmrp24w" path="res://scenes/cena_6___final_glauter.tscn" id="6_b5wq4"]
+[ext_resource type="PackedScene" uid="uid://d2y80vrv5lxyx" path="res://scenes/cena_0___abertura.tscn" id="7_8dh3i"]
+[ext_resource type="PackedScene" uid="uid://b8mmpkk3nqx4i" path="res://scenes/cena_7___creditos.tscn" id="8_od0i0"]
+[ext_resource type="PackedScene" uid="uid://2dd16i4tur6g" path="res://scenes/ui.tscn" id="9_eym2n"]
+
+[node name="Principal" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource("9_eym2n")]
+show_behind_parent = true
+top_level = true
+
+[node name="cena 1 - teatro" parent="." instance=ExtResource("2_fnd44")]
+scale = Vector2(1.13703, 0.985737)
+
+[node name="Cena 2 - Recepção" parent="." instance=ExtResource("3_uonq7")]
+visible = false
+
+[node name="cena 3 - MUGSHOT" parent="." instance=ExtResource("4_snx2s")]
+visible = false
+
+[node name="cena 5 - Final Marcio" parent="." instance=ExtResource("5_v600f")]
+visible = false
+
+[node name="cena 6 - final glauter" parent="." instance=ExtResource("6_b5wq4")]
+visible = false
+
+[node name="cena 7 - creditos" parent="." instance=ExtResource("8_od0i0")]
+visible = false
+
+[node name="cena 0 - abertura" parent="." instance=ExtResource("7_8dh3i")]
+visible = false
+scale = Vector2(1.27678, 1.0844)

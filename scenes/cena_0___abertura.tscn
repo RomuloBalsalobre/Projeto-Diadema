@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2y80vrv5lxyx"]
+
+[ext_resource type="VideoStream" path="res://assets/file_example_MP4_1920_18MG.ogv" id="1_erwt3"]
+[ext_resource type="VideoStream" path="res://assets/output_video2.ogv" id="1_nyyvi"]
+[ext_resource type="Script" path="res://scripts/cena_0___abertura.gd" id="1_ss2sn"]
+[ext_resource type="VideoStream" path="res://assets/output_video.ogv" id="1_yfi8v"]
+
+[node name="cena 0 - abertura" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ss2sn")
+
+[node name="cutscene 1" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_erwt3")
+autoplay = true
+expand = true
+
+[node name="cutscene 2" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("1_yfi8v")
+expand = true
+
+[node name="cutscene 3" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_nyyvi")
+expand = true
+
+[connection signal="finished" from="cutscene 1" to="." method="_on_cutscene_1_finished"]
+[connection signal="finished" from="cutscene 2" to="." method="_on_cutscene_2_finished"]
+[connection signal="finished" from="cutscene 3" to="." method="_on_cutscene_3_finished"]

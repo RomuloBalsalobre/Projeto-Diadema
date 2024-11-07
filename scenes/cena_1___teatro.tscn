@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://dssy8cmc1mw46"]
+
+[ext_resource type="Script" path="res://scripts/cena_1___teatro.gd" id="1_in7xx"]
+[ext_resource type="PackedScene" uid="uid://2dd16i4tur6g" path="res://scenes/ui.tscn" id="2_vf8do"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_218ux"]
+size = Vector2(71.625, 57.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ciyey"]
+size = Vector2(51, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14yaf"]
+size = Vector2(48, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygy2b"]
+size = Vector2(74, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mljr6"]
+size = Vector2(80, 60)
+
+[node name="cena 1 - teatro" type="Node2D"]
+script = ExtResource("1_in7xx")
+
+[node name="background" type="Sprite2D" parent="."]
+
+[node name="sague" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/sague"]
+position = Vector2(93, 120)
+shape = SubResource("RectangleShape2D_218ux")
+
+[node name="sangue" type="Sprite2D" parent="background/sague"]
+
+[node name="relogio" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/relogio"]
+position = Vector2(223, 120)
+shape = SubResource("RectangleShape2D_ciyey")
+debug_color = Color(0.674972, 0.506599, 0, 0.42)
+
+[node name="relogio" type="Sprite2D" parent="background/relogio"]
+
+[node name="livro" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/livro"]
+position = Vector2(318, 120)
+shape = SubResource("RectangleShape2D_14yaf")
+debug_color = Color(0.934048, 2.34878e-05, 0.642161, 0.42)
+
+[node name="livro" type="Sprite2D" parent="background/livro"]
+
+[node name="postit" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/postit"]
+position = Vector2(427, 120)
+shape = SubResource("RectangleShape2D_ygy2b")
+debug_color = Color(0, 0.638382, 0.379451, 0.42)
+
+[node name="postit" type="Sprite2D" parent="background/postit"]
+
+[node name="chave" type="Area2D" parent="background"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/chave"]
+position = Vector2(532, 120)
+shape = SubResource("RectangleShape2D_mljr6")
+debug_color = Color(0.723401, 0.749872, 0.729863, 0.42)
+
+[node name="chave" type="Sprite2D" parent="background/chave"]
+
+[node name="sair" type="Button" parent="background"]
+offset_left = 427.0
+offset_top = 334.0
+offset_right = 519.0
+offset_bottom = 382.0
+text = "Sair"
+
+[node name="ficar" type="Button" parent="background"]
+offset_left = 618.0
+offset_top = 334.0
+offset_right = 700.0
+offset_bottom = 382.0
+text = "Ficar"
+
+[node name="UI" parent="." instance=ExtResource("2_vf8do")]
+
+[connection signal="input_event" from="background/sague" to="." method="_on_sague_input_event"]
+[connection signal="mouse_entered" from="background/sague" to="." method="_on_sague_mouse_entered"]
+[connection signal="mouse_exited" from="background/sague" to="." method="_on_sague_mouse_exited"]
+[connection signal="input_event" from="background/relogio" to="." method="_on_relogio_input_event"]
+[connection signal="mouse_entered" from="background/relogio" to="." method="_on_relogio_mouse_entered"]
+[connection signal="mouse_exited" from="background/relogio" to="." method="_on_relogio_mouse_exited"]
+[connection signal="mouse_entered" from="background/livro" to="." method="_on_livro_mouse_entered"]
+[connection signal="mouse_exited" from="background/livro" to="." method="_on_livro_mouse_exited"]
+[connection signal="mouse_entered" from="background/postit" to="." method="_on_postit_mouse_entered"]
+[connection signal="mouse_exited" from="background/postit" to="." method="_on_postit_mouse_exited"]
+[connection signal="input_event" from="background/chave" to="." method="_on_chave_input_event"]
+[connection signal="mouse_entered" from="background/chave" to="." method="_on_chave_mouse_entered"]
+[connection signal="mouse_exited" from="background/chave" to="." method="_on_chave_mouse_exited"]
+[connection signal="pressed" from="background/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="background/ficar" to="." method="_on_ficar_pressed"]
